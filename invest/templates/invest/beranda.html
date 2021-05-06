@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page}}
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper bg-color">
+            <!-- code here -->
+                <div class="row row-cols-4">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end of row -->
+                <div class="row row-cols-4">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end of row -->
+                <div class="row row-cols-4">
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card">
+                            <a href="{% url 'invest:detail' %}">
+                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
+                            </a>                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end of row -->
+            <!-- end of wrapper -->
+            </div>            
+        </div>
+    </div>    
+</div>
+{% endblock content %}

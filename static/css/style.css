@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0; 
+    font:'Open Sans', sans-serif;   
+}
+
+.myform {
+    border-radius: 25px;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline-style: none;
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+.myform.receiver {
+    width: 30%;
+}
+
+textarea.myform {
+    min-height: 70px;
+    height: 70px;
+}
+
+.send-to {
+    padding: 10px;
+    color: white;
+}
+.messages {
+    /* margin-top: 20%;                        */
+    padding: 25px;
+    background-color: rgb(171, 195, 231);
+    overflow: auto;
+    height: 50vh;        
+}
+.send-messages {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: calc(100% - 240px);
+    padding: 10px;
+    background-color: white;
+    min-width: 200px;
+    height: 50px;
+    text-align: left;
+    font: 400 .9em 'Open Sans', sans-serif;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    color: black;
+}
+.send-messages:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid white;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 0;
+    right: -15px;
+}
+
+.send-messages:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 17px solid white;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    top: -1px;
+    right: -17px;
+}
+.messages-content {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 35px;
+}
+.message-timestamp-right {
+    position: absolute;
+    font-size: .85em;
+    font-weight: 300;
+    bottom: 5px;
+    right: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {    
+    background-color: rgb(171, 171, 231); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+#kirim {
+    width: 150px;
+    border-radius: 30px;
+    margin-left: 30px;
+    height: 70px;
+}
+
+.btn-send {
+    background-color: white;
+    color: black;
+}

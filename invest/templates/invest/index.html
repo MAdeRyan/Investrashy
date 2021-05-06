@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page}}
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<!-- index before login -->
+<!-- <div class="container" style="margin-top: 150px;">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="brand">
+                <h1>Investasi Sampah</h1>
+                <h3>Ayo menjaga lingkungan agar terbebas dari sampah!</h3>
+            </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <button class="btn btn-primary">
+                Daftar
+            </button>
+        </div>
+    </div>
+</div> -->
+
+<!-- after login -->
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper" >
+            <!-- code here -->
+                <img 
+                    class="bg" 
+                    src="{% static 'invest/img/logo.png' %}" 
+                    alt="bg"
+                    >     
+                <div class="content text-center">
+                    <p>Ayo investasikan sampahmu untuk menjaga lingkungan agar masa depan bumi dapat dinikmati oleh anak cucu kita</p>               
+                </div> 
+            <!-- end of wrapper -->
+            </div>
+        </div>
+    </div>      
+</div>
+{% endblock content %}

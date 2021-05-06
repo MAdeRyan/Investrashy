@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page}}
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper bg-color">
+            <!-- code here -->
+                <h1 class="title text-center text-dark"> Chat</h1>
+                <div class="card mb-3 bg-color">
+                    <a href="{% url 'invest:messages' %}" class="row no-gutters border">
+                        <div class="col-md-2">
+                            <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="{% static 'invest/img/logo.png' %}">
+                        </div>
+                        <div class="col">
+                            <div class="card-body text-dark">    
+                                <h4>user</h4>                        
+                                <p>ini adalah isi pesan yang terlihat</p>                        
+                            </div>
+                        </div>
+                    </a>
+                    <!-- end of row -->
+                    <a href="{% url 'invest:messages' %}" class="row no-gutters border">
+                        <div class="col-md-2">
+                            <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="{% static 'invest/img/logo.png' %}">
+                        </div>
+                        <div class="col">
+                            <div class="card-body text-dark">    
+                                <h4>user</h4>                        
+                                <p>ini adalah isi pesan yang terlihat</p>                        
+                            </div>
+                        </div>
+                    </a>
+                    <!-- end of row -->
+                </div>        
+            <!-- end of wrapper -->
+            </div>            
+        </div>
+    </div>    
+</div>
+{% endblock content %}

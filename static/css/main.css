@@ -1,0 +1,205 @@
+body {
+    background-color: black;
+    min-height: 100vh;
+}
+
+img {
+    pointer-events: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+.border-top {
+    height: 5px;
+    background-color: #33B8D9;
+}
+.make-border {    
+    border-top: solid 10px #33B8D9;
+    border-bottom: solid 10px #33B8D9;
+}
+#navbar {    
+    background-color: black;
+    display: block;
+    z-index: 1;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: bold;    
+    color: #33B8D9;
+}
+.navbar-brand:hover{
+    color: #007bff;
+}
+.brand {
+    color: #33B8D9;
+}
+.brand h1 {
+    font-family:montserrat; 
+    font-size:5rem; 
+    font-weight: 900;
+}
+.brand h3  {
+    font-size: 1.25rem;
+}
+
+.btn-primary {
+    border-radius: 22px 22px 22px 22px;
+    width: 150px;
+    height: 50px;
+    background-color: #33B8D9;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+}
+.fa-bars {
+    color: white;
+}
+.toggler {
+    background-color: black;     
+}
+/* The side navigation menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */    
+    top: 110px; /* Stay at the top */
+    left: 0;
+    background-color: #33B8D9; /* Black*/
+    color: black;  
+    font-weight: bold; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */    
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+    
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {top: 160px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+.sidebar .list-menu {
+    border-bottom: solid black;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.sidebar .profile {
+    font-size: 1.5rem;
+}
+.content-wrapper {        
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 10px;    
+    top: 0;     
+    margin-top: 110px;       
+}
+.bg {
+    opacity: 0.2;
+    position: fixed;
+    margin-left: 150px;
+    pointer-events: auto;
+    z-index: -1;
+    height: 600px;
+    width: 600px;
+}
+
+.bg-color {
+    background-color: #33B8D9;
+}
+.content {
+    margin-top: 200px;      
+}
+@media (max-width: 500px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .brand h1 {
+        font-size: 1.75rem;
+    }
+    .brand h3  {
+        font-size: 1rem;
+    }
+}
+
+.card-body p{
+    font-size: 20px;
+}
+
+.card-img {
+    height: 80px;
+    width: 80px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    margin-top: 16px;
+  }
+/* scrollbars */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cccccc;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.upload {
+    cursor: pointer;
+    /* Style as you please, it will become the visible UI component. */
+    margin: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+ }
+ 
+ #upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ }
+
+ .plus-icon {     
+     position: absolute;
+     right: 155px;
+     top: 210px;
+ }

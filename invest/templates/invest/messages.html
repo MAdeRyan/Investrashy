@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+       
+{% block title %}
+{{page}}
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper bg-color">
+            <!-- code here -->  
+                <!-- header -->
+                <div class="row no-gutters border">
+                    <div class="col-md-2">
+                        <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="{% static 'invest/img/logo.png' %}">
+                    </div>
+                    <div class="col">
+                        <div class="card-body text-dark">                            
+                            <h3 class="send-to">Chat</h3>
+                        </div>
+                    </div>
+                </div>                 
+                       
+                <!-- body message -->
+                <div id="pesan" class="messages">
+                    <!-- messages -->
+                    <div class="send-messages">
+                        <p class="message-detail"> Kepada: nama </p>
+                        <p class="messages-content">ini pesan</p>
+                        <div class="message-timestamp-right">SMS 13:37</div>
+                    </div>
+                     <!-- messages -->
+                     <div class="send-messages">
+                        <p class="message-detail"> Kepada: nama </p>
+                        <p class="messages-content">ini pesan</p>
+                        <div class="message-timestamp-right">SMS 13:37</div>
+                    </div>
+                     <!-- messages -->
+                     <div class="send-messages">
+                        <p class="message-detail"> Kepada: nama </p>
+                        <p class="messages-content">ini pesan</p>
+                        <div class="message-timestamp-right">SMS 13:37</div>
+                    </div>
+                     <!-- messages -->
+                     <div class="send-messages">
+                        <p class="message-detail"> Kepada: nama </p>
+                        <p class="messages-content">ini pesan</p>
+                        <div class="message-timestamp-right">SMS 13:37</div>
+                    </div>
+                     <!-- messages -->
+                     <div class="send-messages">
+                        <p class="message-detail"> Kepada: nama </p>
+                        <p class="messages-content">ini pesan</p>
+                        <div class="message-timestamp-right">SMS 13:37</div>
+                    </div>
+                </div>  
+                
+                <!-- send -->
+                <div class="row">
+                    <div class="col mt-4 form-inline">
+                        <textarea id="pesanKirim" class="myform write-message" placeholder="Tulis Pesan"></textarea>
+                        <button id="kirim" class="btn btn-send mb-3">Kirim</button>
+                    </div>                                
+                </div>                
+            <!-- end of wrapper -->
+            </div>            
+        </div>
+    </div>    
+</div>
+{% endblock content %}

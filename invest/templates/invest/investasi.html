@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page}}
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper">
+            <!-- code here -->
+                <div class="row row-cols-1">
+                    <a class="btn btn-primary mt-5 text-dark" href="{% url 'invest:tambah' %}">
+                        Tambah Investasi
+                    </a>
+                    <a class="btn btn-primary mt-5 text-dark" href="{% url 'invest:riwayat' %}">
+                        Cek Riwayat
+                    </a>
+                </div>            
+            <!-- end of wrapper -->
+            </div>            
+        </div>
+    </div>    
+</div>
+{% endblock content %}

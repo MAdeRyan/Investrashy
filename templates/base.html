@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    {% include 'snippet/style.html' %}
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>  
+    
+</head>
+
+<body>
+    {% comment %} navbar {% endcomment %}
+    {% include 'snippet/navbar.html' %}
+
+    <!-- textarea -->
+    <div class="page-header header-filter" data-parallax='true'>
+        {% block header %}
+        {% endblock header %}
+    </div>
+    <!-- end of textarea -->
+
+    <div id="mybody" class="text-white">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <footer class="footer">
+        
+    </footer>    
+</body>
+{% include 'snippet/script.html' %}
+
+</html>

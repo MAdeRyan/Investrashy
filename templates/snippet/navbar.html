@@ -1,0 +1,26 @@
+{% load static %}
+<!-- Image and text -->
+<nav id="navbar" class="navbar navbar-transparent navbar-expand-lg make-border">            
+    <div class="col form-inline">
+        <button onclick="openNav()" class="btn mr-4 btn-outline-light">  
+            <span class="toggler">
+                <i class="fas fa-bars"></i>
+            </span>                      
+        </button>
+        <a class="navbar-brand" href="{% url 'invest:beranda' %}">
+            <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-center" alt="">
+            Investasi Sampah
+        </a>  
+        <div class="col form-inline justify-content-end">
+            <!-- search -->
+            <!-- show only in beranda -->
+            <!-- <form class="form-inline mr-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>      -->
+            <!--  end of search -->
+            <a id="btn-message" href="{% url 'invest:chat' %}" class="btn btn-outline-primary mr-3 my-2 my-sm-0" >Message</a>
+            <button id="button-logout" class="btn btn-danger mr-3 my-2 my-sm-0" type="button">Logout</button>  
+        </div>                    
+    </div>       
+</nav>
