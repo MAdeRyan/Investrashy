@@ -9,8 +9,28 @@
 {% endblock header %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<!-- after login -->
+<div class="container m-0 p-0">
+    <div class="row">        
+        {% include 'invest/snippet/sidebar.html' %}        
+        <div id="main" class="col">
+            <div class="content-wrapper" >            
+                <img 
+                    class="bg" 
+                    src="{% static 'invest/img/logo.png' %}" 
+                    alt="bg"
+                    >     
+                <div class="content text-center">
+                    <p>Ayo investasikan sampahmu untuk menjaga lingkungan agar masa depan bumi dapat dinikmati oleh anak cucu kita</p>               
+                </div>             
+            </div>
+        </div>
+    </div>      
+</div>
+{% else %}
 <!-- index before login -->
-<!-- <div class="container" style="margin-top: 150px;">
+<div class="container" style="padding-top: 250px;">
     <div class="row">
         <div class="col-md-8">
             <div class="brand">
@@ -19,31 +39,11 @@
             </div>
         </div>
         <div class="col-md-8 mt-3">
-            <button class="btn btn-primary">
+            <a href="{% url 'core:register' %}" class="btn btn-primary">
                 Daftar
-            </button>
+            </a>
         </div>
     </div>
-</div> -->
-
-<!-- after login -->
-<div class="container m-0 p-0">
-    <div class="row">        
-        {% include 'invest/snippet/sidebar.html' %}        
-        <div id="main" class="col">
-            <div class="content-wrapper" >
-            <!-- code here -->
-                <img 
-                    class="bg" 
-                    src="{% static 'invest/img/logo.png' %}" 
-                    alt="bg"
-                    >     
-                <div class="content text-center">
-                    <p>Ayo investasikan sampahmu untuk menjaga lingkungan agar masa depan bumi dapat dinikmati oleh anak cucu kita</p>               
-                </div> 
-            <!-- end of wrapper -->
-            </div>
-        </div>
-    </div>      
 </div>
+{% endif %}
 {% endblock content %}

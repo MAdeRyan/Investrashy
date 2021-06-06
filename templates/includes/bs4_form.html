@@ -1,0 +1,20 @@
+{% load widget_tweaks %}
+
+{% for field in user_form.visible_fields %}   
+  <div class="form-group">
+    {{ field.label_tag }}        
+    {% render_field field class="form-control" %}       
+  </div>   
+{% endfor %}
+{% for field in profile_form.visible_fields %}
+  <div class="form-group">
+    {{ field.label_tag }}        
+    {% render_field field class="form-control" %}       
+  </div>
+{% endfor %}
+{% for field in login_form.visible_fields %}   
+  <div class="form-group">
+    {{ field.label_tag }}        
+    {% render_field field class="form-control" %}       
+  </div>   
+{% endfor %}
