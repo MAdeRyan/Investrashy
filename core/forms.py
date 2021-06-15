@@ -9,6 +9,7 @@ class LoginForm(forms.ModelForm):
         fields = ('username','password')
 
 class UserForm(forms.ModelForm):    
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta():
         model = User
         fields = ('username','password','email','first_name')
@@ -22,3 +23,14 @@ class UserProfileInfoForm(forms.ModelForm):
     class Meta():
          model = UserProfileInfo
          fields = ('no_telp','profile_pic')
+
+         widgets = {        
+            'profile_pic': forms.FileInput(
+                attrs={
+                    'id': 'upload-photo',                    
+                }
+            ),                
+         }
+    def __init__(self, *args, **kwargs):
+        super(UserProfileInfoForm, self).__init__(*args, **kwargs)
+        self.fields['profile_pic'].label = ''

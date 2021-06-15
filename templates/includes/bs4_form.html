@@ -8,13 +8,23 @@
 {% endfor %}
 {% for field in profile_form.visible_fields %}
   <div class="form-group">
-    {{ field.label_tag }}        
-    {% render_field field class="form-control" %}       
+    {{ field.label_tag }}            
+    {% if field.name == 'no_telp' %}  
+      {% render_field field class="form-control" %}    
+    {% else %}   
+      {% render_field field class="" %}    
+    {% endif %}    
   </div>
 {% endfor %}
 {% for field in login_form.visible_fields %}   
   <div class="form-group">
     {{ field.label_tag }}        
+    {% render_field field class="form-control" %}       
+  </div>   
+{% endfor %}
+{% for field in invest_form.visible_fields %}   
+  <div class="form-group">    
+    {{ field.label_tag }}            
     {% render_field field class="form-control" %}       
   </div>   
 {% endfor %}

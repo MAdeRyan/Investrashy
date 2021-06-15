@@ -18,16 +18,13 @@ def register(request):
     }
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
-        profile_form = UserProfileInfoForm(data=request.POST)        
+        profile_form = UserProfileInfoForm(request.POST, request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
             user.set_password(user.password)
             user.save()
             profile = profile_form.save(commit=False)
-            profile.user = user                      
-            if 'profile_pic' in request.FILES:
-                print('found it')
-                profile.profile_pic = request.FILES['profile_pic']
+            profile.user = user            
             profile.save()
             registered = True            
         else:

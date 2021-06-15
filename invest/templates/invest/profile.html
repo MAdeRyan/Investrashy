@@ -15,37 +15,18 @@
         <div id="main" class="col">
             <div class="content-wrapper">
             <!-- code here -->
-            <div class="card mx-auto bg-color" style="width: 28rem;">
-                <form class="p-3">                    
-                    <div class="form-group">                        
-                        <label for="upload-photo" class="upload center">
-                            <img 
-                                src="{{ user_info.profile_pic }}" 
-                                class="card-img-top center" 
-                                style="width: 200px;" 
-                                alt=""
-                            >                            
-                            <i class="fas fa-plus-circle plus-icon" style="color: black;"></i>
-                        </label>
-                        <input type="file" id="upload-photo">
-                      </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Nama: </label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" value={{user_profile.first_name}}>
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Alamat Pengambilan</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Deskripsi</label>
-                        <textarea class="form-control" id="formGroupExampleInput3" cols="30" rows="5" placeholder="Another input placeholder"></textarea>
-                      </div>
-                      <div class="form-group mb-0 mt-5">
-                        <a href="{% url 'invest:edit_profile' %}" class="btn btn-dark mt-0 center" style="width: auto;">Edit Profil</a>
-                      </div>
-                  </form>                
-            </div>                        
+            <div class="card mx-auto" style="width: 28rem;">
+                <h3 class="text-dark mx-auto">Profil</h3>
+                {% if dataUser %}                
+                    <img src="{{ advancedData.profile_pic.url }}" class="card-img-top center" style="width: 200px; height: 200px;" alt="{% static 'invest/img/logo.png' %}">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Username: {{ dataUser.username }}</h5>
+                        <h5>Nama: {{ dataUser.first_name }}</h5>
+                        <h5>Email: {{ dataUser.email }}</h5>
+                        <h5>No Telp: {{ advancedData.no_telp }}</h5>                                            
+                    </div>                
+                {% endif %} 
+            </div>                              
             <!-- end of wrapper -->
             </div>            
         </div>

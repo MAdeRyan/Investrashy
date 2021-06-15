@@ -21,11 +21,10 @@
                 </div>
                 {% endif %}
                 <h1>Login here :</h1>
-                <form method="post" action="">
-                    {% csrf_token %}
-                    {# A more "HTML" way of creating the login form#}                    
+                <form method="post" action="" enctype=”multipart/form-data”>
+                    {% csrf_token %}                                      
                     {% include 'includes/bs4_form.html' with form=form %}                                                     
-                    <input type="submit" class="btn btn-dark center" name="login" value="Login">                    
+                    <input type="submit" class="btn btn-dark center" style="width: 100%;" name="login" value="Login">                    
                 </form>
             </div>     
             <!-- end of wrapper -->

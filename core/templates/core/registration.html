@@ -14,22 +14,33 @@
         <div id="main" class="col">
             <div class="content-wrapper">
             <!-- code here -->
-            <div class="jumbotron mx-auto bg-color" style="width: 28rem;">
-              {% if error %}
-                <div class="alert alert-danger" role="alert" style="font-size: 20px;">                    
-                    {{ error }}                    
-                </div>
-              {% endif %}
+            <div class="jumbotron mx-auto bg-color" style="width: 28rem;">              
                 {% if registered %}
                   <h3>Thank you for registering!</h3>
                 {% else %}
                   <h1>Register Here</h1>                  
-                  <form method="post" action="">
+                  <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}                   
-                    {% include 'includes/bs4_form.html' with form=form %}
-                    <input class="btn btn-dark center" type="submit" name="" value="Register">
-                </form>                  
+                          <label for="upload-photo" class="upload center" style="margin: 0px;">
+                              <img 
+                                  src="{% static 'invest/img/logo.png' %}" 
+                                  class="card-img-top center" 
+                                  style="width: 200px;" 
+                                  alt=""
+                              >                            
+                              <i class="fas fa-plus-circle plus-icon" style="color: black; right: 400px; top: 440px;"></i>
+                          </label>                     
+                        {% include 'includes/bs4_form.html' with form=form %}                                      
+                        <div class="form-group mb-0"></div>
+                          <input type="submit" class="btn btn-dark mt-0 center" style="width: 100%;" name="Daftar" value="Daftar">                          
+                        </div>
+                    </form>                   
                 {% endif %}
+                {% if error %}
+                <div class="alert alert-danger mx-auto" role="alert" style="font-size: 20px; width: 28rem;">                    
+                    {{ error }}                    
+                </div>
+              {% endif %}
               </div>
             <!-- end of wrapper -->
             </div>            

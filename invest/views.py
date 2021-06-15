@@ -1,8 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from core.models import UserProfileInfo
+from invest.models import InvestasiModel
+from invest.forms import InvestasiForm
+from core.forms import UserForm,UserProfileInfoForm,LoginForm
 
 @login_required
 def index(request):
@@ -15,6 +19,8 @@ def beranda(request):
     context = {
         'page': 'Investasi Sampah | Beranda',        
     }
+    data = InvestasiModel.objects.all()
+    context['data'] = data
     return render(request, 'invest/beranda.html', context)
 @login_required
 def reward(request):
@@ -35,22 +41,33 @@ def investasi(request):
         }
     return render(request, 'invest/investasi.html', context)
 @login_required
-def detail(request):
+def detail(request, invest_id):
     context = {
         'page': 'Investasi Sampah | Detail',        
-        }
+        }    
+    data = InvestasiModel.objects.get(pk=invest_id)
+    context['data'] = data
     return render(request, 'invest/detail.html', context)
 @login_required
 def tambah(request):
     context = {
         'page': 'Investasi Sampah | Tambah Investasi',        
         }
-    return render(request, 'invest/tambah-investasi.html', context)
+    if request.method == 'POST':
+        invest_form = InvestasiForm(request.POST, request.FILES)        
+        if invest_form.is_valid():             
+            invest_form.user = request.user
+            invest_form.save()            
+        return redirect('invest:beranda')
+    else:        
+        invest_form = InvestasiForm()
+        context['invest_form'] = invest_form             
+        return render(request, 'invest/tambah-investasi.html', context)    
 @login_required
 def riwayat(request):
     context = {
         'page': 'Investasi Sampah | Riwayat',        
-        }
+        }    
     return render(request, 'invest/riwayat.html', context)
 @login_required
 def chat(request):
@@ -69,9 +86,10 @@ def profile(request):
     context = {
         'page': 'Investasi Sampah | Profile',        
         }
-    context['user_info'] = UserProfileInfo
-    context['user_profile'] = User
-    return render(request, 'invest/profile.html', context)
-@login_required
-def edit_profile(request):
-    return render(request, 'invest/edit_profile.html')
+    if request.user.username != 'admin':
+        dataUser = User.objects.get(pk=request.user.id)
+        advancedData = UserProfileInfo.objects.get(user=request.user)
+        context['dataUser'] = dataUser
+        context['advancedData'] = advancedData
+        return render(request, 'invest/profile.html', context)  
+    return render(request, 'invest/profile.html', context)  

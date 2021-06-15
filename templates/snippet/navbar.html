@@ -7,12 +7,17 @@
             <span class="toggler">
                 <i class="fas fa-bars"></i>
             </span>                      
-        </button>
-        {% endif %}
+        </button>      
         <a class="navbar-brand" href="{% url 'invest:index' %}">
             <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-center" alt="">
             Investasi Sampah
-        </a>  
+        </a>    
+        {% else %}
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-center" alt="">
+            Investasi Sampah
+        </a>       
+        {% endif %}   
         <div class="col form-inline justify-content-end">
             {% if user.is_authenticated %}
             <!-- search -->
@@ -33,6 +38,6 @@
                 <a id="btn-login" href="{% url 'core:user_login' %}" class="btn btn-primary mr-3 my-2 my-sm-0" >Masuk</a>
                 {% endif %}    
             {% endif %}
-        </div>                    
+        </div>                         
     </div>       
 </nav>

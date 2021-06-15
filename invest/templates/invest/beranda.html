@@ -16,98 +16,19 @@
             <div class="content-wrapper bg-color">
             <!-- code here -->
                 <div class="row row-cols-4">
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
+                    {% if data %}
+                        {% for eachdata in data %}
+                            <div class="col mb-4">                        
+                                <div class="card">                        
+                                    <a href="{% url 'invest:detail' eachdata.id %}">
+                                        <img src="{{ eachdata.gambar.url }}" class="card-img-top" style="height: 200px; width: 200px;" alt="">                        
+                                    </a>                            
+                                </div>
+                            </div>                    
+                        {% endfor %}
+                    {% endif %}                    
                 </div>
-                <!-- end of row -->
-                <div class="row row-cols-4">
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                </div>
-                <!-- end of row -->
-                <div class="row row-cols-4">
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <a href="{% url 'invest:detail' %}">
-                                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top" alt="{% static 'invest/img/logo.png' %}">                        
-                            </a>                            
-                        </div>
-                    </div>
-                </div>
-                <!-- end of row -->
+                <!-- end of row -->                
             <!-- end of wrapper -->
             </div>            
         </div>

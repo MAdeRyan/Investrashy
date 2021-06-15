@@ -14,15 +14,17 @@
         {% include 'invest/snippet/sidebar.html' %}        
         <div id="main" class="col">
             <div class="content-wrapper">
-            <!-- code here -->
+            <!-- code here -->            
             <div class="card mx-auto" style="width: 28rem;">
-                <img src="{% static 'invest/img/logo.png' %}" class="card-img-top center" style="width: 200px;" alt="{% static 'invest/img/logo.png' %}">
-                <div class="card-body text-dark">
-                    <h5 class="card-title">Jenis Sampah: Plastik</h5>
-                    <h5>Alamat Pengambilan: Banda Aceh</h5>
-                    <p class="card-text">Deskripsi: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{% url 'invest:chat' %}" class="btn btn-primary center" style="width: auto;">Hubungi Penjual</a>
-                </div>
+                {% if data %}                
+                    <img src="{{ data.gambar.url }}" class="card-img-top center" style="width: 200px; height: 200px;" alt="{% static 'invest/img/logo.png' %}">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Jenis Sampah: {{ data.jenis_sampah }}</h5>
+                        <h5>Alamat Pengambilan: {{ data.alamat }}</h5>
+                        <p class="card-text">Deskripsi: {{ data.deskripsi }}</p>
+                        <a href="{% url 'invest:chat' %}" class="btn btn-primary center" style="width: auto;">Hubungi Penjual</a>
+                    </div>                
+                {% endif %} 
             </div>                        
             <!-- end of wrapper -->
             </div>            
