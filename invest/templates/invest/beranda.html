@@ -15,6 +15,7 @@
         <div id="main" class="col">
             <div class="content-wrapper bg-color">
             <!-- code here -->
+            {% if data %}
                 <div class="row row-cols-4">
                     {% if data %}
                         {% for eachdata in data %}
@@ -25,9 +26,12 @@
                                     </a>                            
                                 </div>
                             </div>                    
-                        {% endfor %}
+                        {% endfor %}                    
                     {% endif %}                    
                 </div>
+            {% else %}
+                <h2 class="text-center">Tidak ada investasi yang tersedia</h2>
+            {% endif %}        
                 <!-- end of row -->                
             <!-- end of wrapper -->
             </div>            

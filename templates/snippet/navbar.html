@@ -8,27 +8,26 @@
                 <i class="fas fa-bars"></i>
             </span>                      
         </button>      
+        {% endif %}  
         <a class="navbar-brand" href="{% url 'invest:index' %}">
             <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-center" alt="">
             Investasi Sampah
-        </a>    
-        {% else %}
-        <a class="navbar-brand" href="#">
-            <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-center" alt="">
-            Investasi Sampah
-        </a>       
-        {% endif %}   
+        </a>          
+         
         <div class="col form-inline justify-content-end">
             {% if user.is_authenticated %}
             <!-- search -->
             <!-- show only in beranda -->
                 {% if page == 'Investasi Sampah | Beranda' %}
                 <form class="form-inline mr-3">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>     
                 {% endif %}
             <!--  end of search -->
+            {% if user.is_superuser %}
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-success mr-3 my-2 my-sm-0" >Admin</a>
+            {% endif %} 
             <a id="btn-message" href="{% url 'invest:chat' %}" class="btn btn-outline-primary mr-3 my-2 my-sm-0" >Message</a>
             <a id="btn-logout" href="{% url 'logout' %}" class="btn btn-danger mr-3 my-2 my-sm-0">Logout</a>  
             {% else %}

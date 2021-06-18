@@ -17,27 +17,22 @@
             <!-- code here -->
                 <h3 class="title text-center text-dark"> Reward</h3>
                 <div class="card mb-3">
-                    <div class="row no-gutters border">
-                        <div class="col-md-2">
-                            <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="{% static 'invest/img/logo.png' %}">
-                        </div>
-                        <div class="col">
-                            <div class="card-body text-dark">                            
-                                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>                        
+                    {% if data %}
+                        {% for eachdata in data %}
+                            <div class="row no-gutters border">
+                                <div class="col-md-2">
+                                    <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="card-body text-dark">                            
+                                        <p>Selamat Anda mendapatkan reward sejumlah 1500 koin atas investasi yang anda lakukan</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- end of row -->
-                    <div class="row no-gutters border">
-                        <div class="col-md-2">
-                            <img src="{% static 'invest/img/logo.png' %}" class="card-img center" alt="{% static 'invest/img/logo.png' %}">
-                        </div>
-                        <div class="col">
-                            <div class="card-body text-dark">                            
-                                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>                        
-                            </div>
-                        </div>
-                    </div>
+                        {% endfor%}
+                    {% else %}
+                        <h2 class="text-center text-dark">Anda belum melakukan investasi</h2>
+                    {% endif%}                     
                 </div>        
             <!-- end of wrapper -->
             </div>            
