@@ -18,14 +18,16 @@
             <div class="card mx-auto bg-color" style="width: 28rem;">
                 <form class="p-3" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}                   
-                        <label for="upload-photo" class="upload center">
+                        <label for="upload-photo" class="upload center" style="margin: 0px;">
+                            Tambah Gambar:
                             <img 
-                                src="{% static 'invest/img/logo.png' %}" 
+                                id="output"
+                                src="/media/images/input-image.png"
                                 class="card-img-top center" 
-                                style="width: 200px;" 
+                                style="width: 200px; height: 200px;" 
                                 alt=""
                             >                            
-                            <i class="fas fa-plus-circle plus-icon" style="color: black;"></i>
+                            <i class="fas fa-plus-circle plus-icon" style="color: black; right: 110px; top: 255px;"></i>
                         </label>                     
                     {% include 'includes/bs4_form.html' with form=form %}                                      
                     <div class="form-group mb-0 mt-5"></div>

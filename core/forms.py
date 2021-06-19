@@ -27,7 +27,8 @@ class UserProfileInfoForm(forms.ModelForm):
          widgets = {        
             'profile_pic': forms.FileInput(
                 attrs={
-                    'id': 'upload-photo',                    
+                    'id': 'upload-photo', 
+                    'onchange': 'loadFile(event)',
                 }
             ),                
          }

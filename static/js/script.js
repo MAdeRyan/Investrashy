@@ -9,3 +9,8 @@ function closeNav() {
   document.getElementById("sidebar").style.width = "0";  
   document.getElementById("main").style.marginLeft = "250px";
 }
+
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};

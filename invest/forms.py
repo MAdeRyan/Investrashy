@@ -9,7 +9,8 @@ class InvestasiForm(forms.ModelForm):
         widgets = {        
             'gambar': forms.FileInput(
                 attrs={
-                    'id': 'upload-photo',                    
+                    'id': 'upload-photo',  
+                    'onchange': 'loadFile(event)',                  
                 }
             ),   
             'jenis_sampah': forms.Select(

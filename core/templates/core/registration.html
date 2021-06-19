@@ -22,13 +22,15 @@
                   <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}                   
                           <label for="upload-photo" class="upload center" style="margin: 0px;">
+                            Tambah Foto Profil:
                               <img 
-                                  src="{% static 'invest/img/logo.png' %}" 
+                                  id="output"
+                                  src="/media/profile_pics/profile.jpg" 
                                   class="card-img-top center" 
-                                  style="width: 200px;" 
+                                  style="width: 200px; height: 200px;" 
                                   alt=""
                               >                            
-                              <i class="fas fa-plus-circle plus-icon" style="color: black; right: 400px; top: 440px;"></i>
+                              <i class="fas fa-plus-circle plus-icon" style="color: black; right: 350px; top: 500px;"></i>
                           </label>                     
                         {% include 'includes/bs4_form.html' with form=form %}                                      
                         <div class="form-group mb-0"></div>
